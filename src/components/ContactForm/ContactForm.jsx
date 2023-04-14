@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import PropTypes from 'prop-types';
 
-import css from './form-module.css';
+import css from './contact-form.module.css'
 
 
 const ContactForm = ({ onSubmitForm }) => {
@@ -31,8 +31,8 @@ const ContactForm = ({ onSubmitForm }) => {
   };
 
   return (
-    <form className={css.wrapper} onSubmit={handleSubmit}>
-      <label className={css.label}>Name</label>
+      <form className={css.wrapper} onSubmit={handleSubmit}>
+       <label className={css.label}>Name</label>
       <input
         className={css.input}
         value={name}
@@ -58,7 +58,7 @@ const ContactForm = ({ onSubmitForm }) => {
       <button className={css.btn} type="submit">
         Add contact
       </button>
-    </form>
+      </form>
   );
 };
 

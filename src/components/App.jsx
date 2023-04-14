@@ -3,18 +3,18 @@ import { nanoid } from 'nanoid';
 
 import { ContactForm } from './ContactForm/ContactForm';
 import FilterPhonebook from './FilterPhonebook/FilterPhonebook';
-import ContactList from './ContactsList/ContactsList';
-import Contacts from './services/contacts.json';
+import ContactList from './ContactList/ContactList';
+import initialContacts from './services/contacts.json';
 
 import css from './App.module.css';
 
-export default function App() {
-  const [contacts, setContacts] = useState(() => JSON.parse(window.localStorage.getItem('contacts')) ?? [...Contacts]);
+const App = () => {
+  const [contacts, setContacts] = useState(() => JSON.parse(window.localStorage.getItem('my contacts')) ?? [...initialContacts]);
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
     
-    localStorage.setItem('contacts', JSON.stringify(contacts));
+    localStorage.setItem('my contacts', JSON.stringify(contacts));
   }, [contacts]);
 
   
@@ -88,7 +88,7 @@ const isDublicate= name => {
   };
 
   
-
+export default App;
  
 
 

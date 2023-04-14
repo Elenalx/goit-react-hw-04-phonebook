@@ -31,9 +31,9 @@ const ContactForm = ({ onSubmitForm }) => {
   };
 
   return (
-      <form className={css.wrapper} onSubmit={handleSubmit}>
-       <label className={css.label}>Name</label>
-      <input
+    <form className={css.wrapper} onSubmit={handleSubmit}>
+      <label className={css.label}>Name</label>
+       <input
         className={css.input}
         value={name}
         type="text"

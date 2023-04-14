@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 
 import ContactForm from './ContactForm/ContactForm';
 import FilterPhonebook from './FilterPhonebook/FilterPhonebook';
-import ContactList from './ContactList/ContactList';
+import ContactList from './Contacts/ContactList';
 
 import initialContacts from './services/contacts.json';
 import css from './App.module.css';

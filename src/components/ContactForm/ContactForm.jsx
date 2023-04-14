@@ -1,20 +1,12 @@
 import { useState } from 'react';
-import  PropTypes  from 'prop-types';
+
+import PropTypes from 'prop-types';
+
 import css from './form-module.css';
 
-
-export const ContactForm = ({ onSubmitForm }) => {
+const ContactForm = ({ onSubmitForm }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
-
-    const handleSubmit = evt => {
-    evt.preventDefault();
-    onSubmitForm( name, number );
-    setName('');
-    setNumber('');
-  };
-
 
   const handleChange = evt => {
     const { name, value } = evt.currentTarget;
@@ -30,9 +22,12 @@ export const ContactForm = ({ onSubmitForm }) => {
     }
   };
 
-
-
-
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    onSubmitForm({ name, number });
+    setName('');
+    setNumber('');
+  };
 
   return (
     <form className={css.wrapper} onSubmit={handleSubmit}>
@@ -66,6 +61,8 @@ export const ContactForm = ({ onSubmitForm }) => {
   );
 };
 
+export default ContactForm;
+
 ContactForm.propTypes = {
-  onSubmitForm: PropTypes.func.isRequired
+  onSubmitForm: PropTypes.func.isRequired,
 };

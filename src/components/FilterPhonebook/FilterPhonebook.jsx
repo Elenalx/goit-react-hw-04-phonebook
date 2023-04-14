@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import css from './filter-phonebook.module.css';
 
 const FilterPhonebook = ({ onChange }) => {
